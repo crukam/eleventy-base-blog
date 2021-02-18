@@ -3,3 +3,24 @@ layout: layouts/base.njk
 templateClass: tmpl-home
 ---
 {{ content | safe }}
+
+<form name="contact" method="POST" data-netlify="true">
+  <p>
+    <label for="name">Your Name: </label> <input type="text" name="name"  required/> 
+  </p>
+  <p>
+    <label for="email">Your Email: </label> <input type="email" name="email" required/>
+  </p>
+  <p>
+    <label>Your Role:</label> <select name="role[]" multiple>
+      <option value="leader">leader</option>
+      <option value="follower">follower</option>
+    </select>
+  </p>
+  <p>
+    <label for="message">Message: <textarea name="message"></textarea></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
